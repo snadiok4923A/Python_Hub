@@ -1,0 +1,23 @@
+// Edit this file to add or customize quiz questions.
+const QUESTIONS = [
+[1,"Beginner","PYTHON BASICS","Which keyword defines a function in Python?",null,["function","define","def","fun"],2,"Python uses `def` to declare a function. The indented block below it is the function body."],
+[2,"Beginner","DATA TYPES","What is the data type of 3.14?","value = 3.14\nprint(type(value))",["int","float","str","bool"],1,"A number with a decimal point is a float."],
+[3,"Beginner","OUTPUT PREDICTION","What will this code print?","print(2 ** 3)",["6","8","9","Error"],1,"The ** operator means exponentiation: 2 raised to the power 3 equals 8."],
+[4,"Beginner","STRINGS","Which method converts a string to lowercase?",'name = "PYTHON"',["name.lower()","name.small()","name.down()","lower(name)"],0,"The string method lower() returns a lowercase copy."],
+[5,"Beginner","LISTS","Which symbol creates a Python list?",null,["{}","()","[]","<>"],2,"Square brackets create a list, such as [1, 2, 3]."],
+[6,"Intermediate","SLICING","What is the output?","word = 'PYTHON'\nprint(word[1:4])",["PYT","YTH","THO","YTHO"],1,"The start index is included and the stop index is excluded. Indexes 1, 2 and 3 spell YTH."],
+[7,"Intermediate","LIST METHODS","What will this code print?","items = [1, 2, 3]\nitems.append(4)\nprint(items)",["[1, 2, 3]","[4, 1, 2, 3]","[1, 2, 3, 4]","Error"],2,"append() adds one item to the end of a list."],
+[8,"Intermediate","LOOPS","How many times will Python be printed?","for i in range(2, 7, 2):\n    print('Python')",["2 times","3 times","4 times","5 times"],1,"range(2, 7, 2) generates 2, 4 and 6: three iterations."],
+[9,"Intermediate","DICTIONARIES","Which expression safely gets a missing key?",'profile = {"name": "Ava"}',["profile['age']","profile.get('age')","profile.key('age')","profile.find('age')"],1,"dict.get() returns None by default when the key is absent instead of raising KeyError."],
+[10,"Intermediate","BOOLEAN LOGIC","What is the result of True and not False?",null,["True","False","None","Error"],0,"not False is True, and True and True evaluates to True."],
+[11,"Intermediate","FUNCTIONS","What does a function return if it has no return statement?","def greet():\n    print('Hello')\n\nresult = greet()\nprint(result)",['"Hello"',"0","None","True"],2,"A function without an explicit return statement returns None."],
+[12,"Intermediate","COMPREHENSIONS","What list is created?","squares = [x*x for x in range(4)]",["[1, 4, 9, 16]","[0, 1, 4, 9]","[0, 1, 2, 3]","[0, 2, 4, 6]"],1,"range(4) produces 0, 1, 2, 3. Squaring each creates [0, 1, 4, 9]."],
+[13,"Advanced","SCOPE","What will this code print?","x = 10\ndef change():\n    x = 5\nchange()\nprint(x)",["5","10","None","Error"],1,"The x assigned inside change() is local. The global x remains 10."],
+[14,"Advanced","IDENTITY","Which operator checks whether two names refer to the same object?",null,["==","=","is","equals"],2,"is checks object identity. == checks whether values compare equal."],
+[15,"Advanced","EXCEPTIONS","Which optional block runs whether an exception occurs or not?","try:\n    risky_operation()\nexcept ValueError:\n    recover()",["else","finally","raise","catch"],1,"A finally block executes after the try/except sequence."],
+[16,"Advanced","REFERENCE BEHAVIOR","What is the output?","a = [1, 2]\nb = a\nb.append(3)\nprint(a)",["[1, 2]","[1, 2, 3]","[3]","Error"],1,"a and b refer to the same list object. Mutating it through b is visible through a."],
+[17,"Advanced","ITERATORS","What does next(iter([7, 8, 9])) return?",null,["8","9","[7, 8, 9]","7"],3,"iter() creates an iterator; the first next() call returns the first element, 7."],
+[18,"Expert","DECORATORS","What is the main purpose of a decorator in Python?",null,["Delete a function","Modify or extend a callable's behavior","Convert a list to a tuple","Stop recursion"],1,"A decorator wraps a function or class to add or modify behavior."],
+[19,"Expert","GENERATORS","Which keyword makes a function produce generator values?",null,["return","yield","async","pass"],1,"yield pauses a function and produces a value. Calling it creates a generator."],
+[20,"Expert","DEFAULT ARGUMENTS","What is the output of the two calls?","def add_item(item, box=[]):\n    box.append(item)\n    return box\n\nprint(add_item(1))\nprint(add_item(2))",["[1] then [2]","[1] then [1, 2]","[1, 2] then [1, 2]","TypeError"],1,"Default argument objects are created once when the function is defined. The same list is reused. Prefer box=None and create a list inside the function."]
+].map(([id,level,topic,question,code,options,answer,explanation])=>({id,level,topic,question,code,options,answer,explanation}));
