@@ -198,6 +198,96 @@ const QUESTIONS = [
 
   [100,"Expert","OUTPUT PREDICTION","What will this code print?","a = [1, 2]\nb = a[:]\nb[0] = 99\nprint(a)",["[99, 2]","[1, 2]","[99]","Error"],1,"List slicing creates a shallow copy. Changing the first element of b does not change the outer list a."]
 
+  
+
+[
+  // ================= INTERMEDIATE =================
+
+  [101,"Intermediate","STRING FORMATTING","What will be the output?","name = 'Alex'\nage = 21\nprint(f'{name} is {age}')",["Alex 21","Alex is 21","name is age","Error"],1,"An f-string evaluates expressions inside curly braces and inserts their values into the string."],
+
+  [102,"Intermediate","LIST METHODS","What is the output?","numbers = [1, 2, 3]\nresult = numbers.extend([4, 5])\nprint(result)",["[1, 2, 3, 4, 5]","[4, 5]","None","Error"],2,"extend() modifies the original list in place and returns None."],
+
+  [103,"Intermediate","DICTIONARY COMPREHENSION","What will be printed?","result = {x: x + 1 for x in range(3)}\nprint(result)",["{0: 1, 1: 2, 2: 3}","{1: 1, 2: 2, 3: 3}","{0, 1, 2}","Error"],0,"The comprehension creates dictionary entries where each key maps to its value plus one."],
+
+  [104,"Intermediate","BOOLEAN LOGIC","What is the output?","print(0 or 10)",["0","10","True","False"],1,"The or operator returns the first truthy operand. Since 0 is falsy, it returns 10."],
+
+  [105,"Intermediate","STRING SLICING","What will this code print?",'text = "PYTHON"\nprint(text[::-1])',["PYTHON","NOHTYP","PTOHYN","Error"],1,"A slice with a step of -1 traverses the string backwards."],
+
+  [106,"Intermediate","LOOP CONTROL","What is the output?","for i in range(3):\n    pass\nprint(i)",["0","1","2","Error"],2,"The loop variable remains accessible after the loop. Its final value is 2."],
+
+  [107,"Intermediate","SETS","What is the result?","a = {1, 2, 3}\nb = {3, 4, 5}\nprint(a - b)",["{3}","{1, 2}","{4, 5}","{1, 2, 3, 4, 5}"],1,"Set difference returns elements present in the first set but absent from the second."],
+
+  [108,"Intermediate","FUNCTION ARGUMENTS","What does *args collect inside a function?",null,["Keyword arguments in a dictionary","Extra positional arguments in a tuple","Only integers","Function names"],1,"*args collects additional positional arguments into a tuple."],
+
+  [109,"Intermediate","FUNCTION ARGUMENTS","What does **kwargs collect inside a function?",null,["Extra keyword arguments in a dictionary","Positional arguments in a list","Only strings","Return values"],0,"**kwargs collects additional keyword arguments into a dictionary."],
+
+  [110,"Intermediate","OUTPUT PREDICTION","What is the output?","x = [1, 2, 3]\nprint(x * 2)",["[2, 4, 6]","[1, 2, 3, 1, 2, 3]","[1, 2, 3, 2]","Error"],1,"Multiplying a list by an integer repeats its elements that many times."],
+
+  // ================= ADVANCED =================
+
+  [111,"Advanced","OOP","Which method is commonly used to create an instance representation for debugging?",null,["__str__()","__repr__()","__len__()","__call__()"],1,"__repr__() is intended to provide an unambiguous or developer-oriented representation of an object."],
+
+  [112,"Advanced","POLYMORPHISM","What does polymorphism allow in object-oriented programming?",null,["A function to work with objects of different types through a common interface","A class to have no methods","A variable to store only integers","A program to run without memory"],0,"Polymorphism allows different object types to be used through a common interface."],
+
+  [113,"Advanced","CLASS METHODS","Which parameter is conventionally used as the first parameter of a class method?",null,["self","cls","this","class"],1,"A class method receives the class as its first argument, conventionally named cls."],
+
+  [114,"Advanced","STATIC METHODS","Which decorator defines a static method?",null,["@classmethod","@property","@staticmethod","@abstractmethod"],2,"@staticmethod defines a method that does not automatically receive self or cls."],
+
+  [115,"Advanced","EXCEPTION HANDLING","What happens if an exception is not caught?",null,["It is silently ignored","It propagates up the call stack and may terminate the program","It becomes a warning automatically","It always returns None"],1,"An uncaught exception propagates through the call stack and normally terminates the current program execution with a traceback."],
+
+  [116,"Advanced","ITERTOOLS","Which itertools function creates an iterator that repeats a value indefinitely by default?",null,["cycle()","repeat()","chain()","count()"],1,"itertools.repeat() repeats a specified object indefinitely unless a repetition count is provided."],
+
+  [117,"Advanced","COLLECTIONS","Which collections type is designed to efficiently append and pop from both ends?",null,["Counter","defaultdict","deque","OrderedDict"],2,"collections.deque supports efficient append and pop operations at both ends."],
+
+  [118,"Advanced","OUTPUT PREDICTION","What will this print?","a = [1, 2, 3]\nprint(a is a[:])",["True","False","None","Error"],1,"Slicing creates a new list object, so it is not identical to the original list."],
+
+  [119,"Advanced","FUNCTION CACHING","Which decorator can cache function results?",null,["@cache","@memo","@store","@remember"],0,"functools.cache provides an unbounded cache for function results."],
+
+  [120,"Advanced","REGULAR EXPRESSIONS","Which module is commonly used for regular expressions in Python?",null,["regex","re","pattern","string"],1,"The built-in re module provides regular expression matching and substitution functions."],
+
+  [121,"Advanced","OOP INHERITANCE","What is method overriding?",null,["Deleting a parent class method","A child class providing its own implementation of an inherited method","Calling a method twice","Creating a static variable"],1,"Method overriding happens when a subclass defines a method with the same name as an inherited method."],
+
+  [122,"Advanced","PYTHON MODULES","What does the following condition commonly check?","if __name__ == '__main__':\n    main()",["Whether Python is installed","Whether the file is executed as the main program","Whether a module is imported","Whether a function exists"],1,"When a file is run directly, its __name__ is set to '__main__'. When imported, it normally has its module name."],
+
+  [123,"Advanced","LAMBDA AND SORTING","What is the output?","items = [('A', 3), ('B', 1), ('C', 2)]\nresult = sorted(items, key=lambda x: x[1])\nprint(result[0])",["('A', 3)","('B', 1)","('C', 2)","Error"],1,"sorted() uses the second tuple element as its sorting key. The smallest value is 1."],
+
+  [124,"Advanced","RECURSION","What is the output?","def power(n):\n    if n == 0:\n        return 1\n    return 2 * power(n - 1)\n\nprint(power(3))",["4","6","8","16"],2,"The recursive function calculates 2 multiplied by itself three times, resulting in 8."],
+
+  [125,"Advanced","DATA STRUCTURES","Which Python data structure follows the LIFO principle?",null,["Queue","Stack","Linked list","Tree"],1,"A stack follows Last In, First Out. The most recently added element is removed first."],
+
+  // ================= EXPERT =================
+
+  [126,"Expert","DESCRIPTORS","Which special method is commonly used by a descriptor to control attribute access?",null,["__get__()","__start__()","__run__()","__loop__()"],0,"The descriptor protocol commonly uses __get__, __set__ and __delete__ to control attribute access."],
+
+  [127,"Expert","METACLASSES","What is a metaclass in Python?",null,["A class used to create classes","A special list","A function that deletes objects","A module loader"],0,"A metaclass defines how classes themselves are created and customized."],
+
+  [128,"Expert","GARBAGE COLLECTION","Which module provides tools for interacting with Python's cyclic garbage collector?",null,["memory","gc","sysmem","collect"],1,"The built-in gc module provides an interface to the cyclic garbage collector."],
+
+  [129,"Expert","THREADING","Which module provides thread-based parallel execution primitives?",null,["multiprocessing","threading","subprocess","asyncio"],1,"The threading module provides thread-based concurrency primitives in Python."],
+
+  [130,"Expert","MULTIPROCESSING","Which module can run tasks in separate processes?",null,["threading","multiprocessing","re","collections"],1,"The multiprocessing module provides process-based parallelism using separate processes."],
+
+  [131,"Expert","ASYNCIO","Which function commonly starts an asyncio coroutine from a synchronous entry point?",null,["asyncio.start()","asyncio.run()","asyncio.begin()","asyncio.execute()"],1,"asyncio.run() runs a coroutine and manages the event loop lifecycle for that call."],
+
+  [132,"Expert","CONTEXT MANAGERS","What does __exit__ receive in a basic synchronous context manager?",null,["Only self","Exception type, exception value and traceback","Only the return value","The current thread"],1,"__exit__ receives the exception type, exception value and traceback, or None values if no exception occurred."],
+
+  [133,"Expert","DESCRIPTORS","Which built-in decorator turns a method into a managed attribute?",null,["@property","@classmethod","@staticmethod","@cache"],0,"@property creates a property descriptor, allowing method logic to be accessed through attribute syntax."],
+
+  [134,"Expert","TYPE HINTS","What does this annotation indicate?","def greet(name: str) -> str:\n    return 'Hello ' + name",["The function must return an integer","The parameter and return value are annotated as strings","The function is asynchronous","The function is private"],1,"The annotation suggests that name and the return value are strings. Type hints are not automatically enforced at runtime."],
+
+  [135,"Expert","DECORATORS","What is the purpose of functools.wraps?",null,["To execute a function repeatedly","To preserve wrapped function metadata","To convert a function into a class","To remove function arguments"],1,"functools.wraps helps preserve metadata such as the wrapped function's name and documentation."],
+
+  [136,"Expert","PYTHON INTERNALS","What does the CPython bytecode dis module help inspect?",null,["Network packets","Python bytecode instructions","Database tables","Memory addresses only"],1,"The dis module disassembles Python code into bytecode instructions."],
+
+  [137,"Expert","MEMORY MANAGEMENT","What does sys.getsizeof() report?",null,["The recursive size of every referenced object","The shallow size of an object in bytes","The total RAM used by Python","The size of a file on disk"],1,"sys.getsizeof() reports the shallow size of an object in bytes, not the full size of objects it references."],
+
+  [138,"Expert","ASYNC GENERATORS","Which keyword is used to produce values from an asynchronous generator?",null,["return","yield","await only","async"],1,"An asynchronous generator uses yield to produce values and is declared with async def."],
+
+  [139,"Expert","MULTIPLE INHERITANCE","Which algorithm does Python use for method resolution order in multiple inheritance?",null,["Binary search","C3 linearization","Quick sort","Depth-first search only"],1,"Python uses C3 linearization to calculate a consistent method resolution order."],
+
+  [140,"Expert","PYTHON OUTPUT","What will this print?","x = [1, 2, 3]\ny = x\nx += [4]\nprint(y)",["[1, 2, 3]","[1, 2, 3, 4]","[4]","Error"],1,"For a list, += extends the existing list in place. Since x and y refer to the same object, both names see the updated contents."]
+]
+
 
 
 ].map(([id,level,topic,question,code,options,answer,explanation])=>({id,level,topic,question,code,options,answer,explanation}));
