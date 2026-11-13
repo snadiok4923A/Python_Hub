@@ -285,7 +285,7 @@ const QUESTIONS = [
 
   [139,"Expert","MULTIPLE INHERITANCE","Which algorithm does Python use for method resolution order in multiple inheritance?",null,["Binary search","C3 linearization","Quick sort","Depth-first search only"],1,"Python uses C3 linearization to calculate a consistent method resolution order."],
 
-  [140,"Expert","PYTHON OUTPUT","What will this print?","x = [1, 2, 3]\ny = x\nx += [4]\nprint(y)",["[1, 2, 3]","[1, 2, 3, 4]","[4]","Error"],1,"For a list, += extends the existing list in place. Since x and y refer to the same object, both names see the updated contents."]
+  
 ]
 
 
